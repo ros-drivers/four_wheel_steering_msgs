@@ -1,20 +1,24 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(four_wheel_steering_msgs)
 
-#Add custom (non compiling) targets so launch scripts and python files show up in QT Creator's project view.
-file(GLOB_RECURSE EXTRA_FILES */*)
-add_custom_target(${PROJECT_NAME}_OTHER_FILES ALL WORKING_DIRECTORY ${PROJECT_SOURCE_DIR} SOURCES ${EXTRA_FILES})
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
-# We want boost/format.hpp, which isn't in its own component.
-find_package(Boost REQUIRED)
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
 
-add_message_files(
-  DIRECTORY msg
-  FILES FourWheelSteering.msg FourWheelSteeringStamped.msg)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/FourWheelSteering.msg
+  msg/FourWheelSteeringStamped.msg
+  DEPENDENCIES std_msgs
+  ADD_LINTER_TESTS
+)
 
-generate_messages(DEPENDENCIES std_msgs)
-
-catkin_package(
-  CATKIN_DEPENDS message_runtime std_msgs
-  DEPENDS Boost)
+ament_export_dependencies(rosidl_default_runtime)
+ament_package()
