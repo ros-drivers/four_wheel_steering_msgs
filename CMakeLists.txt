@@ -17,7 +17,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   msg/FourWheelSteering.msg
   msg/FourWheelSteeringStamped.msg
   DEPENDENCIES std_msgs
-  ADD_LINTER_TESTS
 )
 
 ament_export_dependencies(rosidl_default_runtime)
