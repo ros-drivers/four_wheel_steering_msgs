@@ -1,5 +1,5 @@
 ## Time stamped drive command or odometry for robots with FourWheelSteering.
 #  $Id$
 
-Header          header
+std_msgs/Header    header
 FourWheelSteering  data

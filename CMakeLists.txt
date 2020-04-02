@@ -1,16 +1,24 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.5)
 project(four_wheel_steering_msgs)
 
-find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
-# We want boost/format.hpp, which isn't in its own component.
-find_package(Boost REQUIRED)
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-add_message_files(
-  DIRECTORY msg
-  FILES FourWheelSteering.msg FourWheelSteeringStamped.msg)
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
 
-generate_messages(DEPENDENCIES std_msgs)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  msg/FourWheelSteering.msg
+  msg/FourWheelSteeringStamped.msg
+  DEPENDENCIES std_msgs
+  ADD_LINTER_TESTS
+)
 
-catkin_package(
-  CATKIN_DEPENDS message_runtime std_msgs
-  DEPENDS Boost)
+ament_export_dependencies(rosidl_default_runtime)
+ament_package()
