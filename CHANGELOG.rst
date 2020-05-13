@@ -2,6 +2,11 @@
 Changelog for package four_wheel_steering_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainer email
+* Contributors: Vincent Rousseau
+
 1.1.0 (2020-04-06)
 ------------------
 * Bump CMake version to avoid CMP0048 warning (`#4 <https://github.com/ros-drivers/four_wheel_steering_msgs/issues/4>`_)
