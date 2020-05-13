@@ -2,8 +2,8 @@
 Changelog for package four_wheel_steering_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2020-05-13)
+------------------
 * Update maintainer email
 * Contributors: Vincent Rousseau
 
