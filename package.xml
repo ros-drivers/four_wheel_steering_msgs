@@ -4,8 +4,8 @@
   <description>
     ROS messages for robots using FourWheelSteering.
   </description>
-  <maintainer email="vincent.rousseau@irstea.fr">Vincent Rousseau</maintainer>
-  <author email="vincent.rousseau@irstea.fr">Vincent Rousseau</author>
+  <maintainer email="vincentrou@gmail.com">Vincent Rousseau</maintainer>
+  <author email="vincentrou@gmail.com">Vincent Rousseau</author>
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/four_wheel_steering_msgs</url>
