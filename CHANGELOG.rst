@@ -2,8 +2,8 @@
 Changelog for package four_wheel_steering_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2020-10-02)
+------------------
 * 2.0.0
 * Add architecture_independent tag
 * Remove linter tests directive
